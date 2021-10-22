@@ -1,0 +1,31 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: buildah
+spec:
+  tasks:
+  - name: git-clone
+    params:
+    - name: url
+      value: https://github.com/cloud-native-garage-method-cohort/ophelia-katarina-assignment.git
+    taskRef:
+      name: git-clone
+      kind: ClusterTask
+    workspaces:
+    - name: output
+      workspace: pipeline-shared-data
+
+  - name: build-image
+    runAfter:
+    - git-clone
+    params:
+    - name: IMAGE
+      value: quay.io/ophelia_huang/ophelia-kat-express
+    taskRef:
+      name: buildah
+      kind: ClusterTask
+    workspaces:
+    - name: source
+      workspace: pipeline-shared-data
+  workspaces:
+  - name: pipeline-shared-data
