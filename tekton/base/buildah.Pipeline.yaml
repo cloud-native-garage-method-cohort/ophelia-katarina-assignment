@@ -7,7 +7,7 @@ spec:
   - name: git-clone
     params:
     - name: url
-      value: https://github.com/cloud-native-garage-method-cohort/ophelia-katarina-assignment.git
+      value: "$(params.source-repo)"
     taskRef:
       name: git-clone
       kind: ClusterTask
@@ -20,7 +20,7 @@ spec:
     - git-clone
     params:
     - name: IMAGE
-      value: quay.io/ophelia_huang/ophelia-kat-express
+      value: "$(params.image-repo):$(tasks.git-clone.results.commit)"
     taskRef:
       name: buildah
       kind: ClusterTask

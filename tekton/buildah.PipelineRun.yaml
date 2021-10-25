@@ -8,7 +8,9 @@ spec:
     name: buildah
   params:
     - name: image-repo
-      value: quay.io/ophelia_huang/ophelia-kat-express:1
+      value: quay.io/ophelia_huang/ophelia-kat-express
+    - name: source-repo
+      value: https://github.com/cloud-native-garage-method-cohort/ophelia-katarina-assignment.git
   workspaces:
   - name: pipeline-shared-data
     volumeClaimTemplate:
