@@ -3,12 +3,12 @@ kind: PipelineRun
 metadata:
   generateName: buildah-
 spec:
-  serviceAccountName: buildah-service-account
+  serviceAccountName: build-bot
   pipelineRef:
     name: buildah
   params:
     - name: image-repo
-      value: docker pull quay.io/ophelia_huang/ophelia-kat-express:1
+      value: quay.io/ophelia_huang/ophelia-kat-express:1
   workspaces:
   - name: pipeline-shared-data
     volumeClaimTemplate:
