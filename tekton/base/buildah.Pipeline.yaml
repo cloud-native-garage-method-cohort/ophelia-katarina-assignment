@@ -3,6 +3,11 @@ kind: Pipeline
 metadata:
   name: buildah
 spec:
+  params:
+  - name: source-repo
+    type: string
+  - name: image-repo
+    type: string
   tasks:
   - name: git-clone
     params:
