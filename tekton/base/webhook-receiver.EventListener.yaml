@@ -24,7 +24,7 @@ spec:
         serviceAccountName: build-bot
         params:
           - name: app-name
-            value: express-sample-app
+            value: express-collab
           - name: image-repo
             value: quay.io/ophelia_huang/ophelia-kat-express
           - name: source-repo
