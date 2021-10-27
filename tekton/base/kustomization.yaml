@@ -6,3 +6,5 @@ resources:
 - buildah.Pipeline.yaml
 - buildah.Secret.yaml
 - webhook-receiver.EventListener.yaml
+- create-configuration.Task.yaml
+- deploy.Task.yaml
