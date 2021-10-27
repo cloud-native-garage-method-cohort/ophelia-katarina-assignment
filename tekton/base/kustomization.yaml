@@ -5,3 +5,4 @@ resources:
 - build-bot.ServiceAccount.yaml
 - buildah.Pipeline.yaml
 - buildah.Secret.yaml
+- webhook-receiver.EventListener.yaml
