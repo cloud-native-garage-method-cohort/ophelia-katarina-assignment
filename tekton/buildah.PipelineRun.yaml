@@ -7,6 +7,8 @@ spec:
   pipelineRef:
     name: buildah
   params:
+    - name: app-name
+      value: express-collab
     - name: image-repo
       value: quay.io/ophelia_huang/ophelia-kat-express
     - name: source-repo
