@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ophelia-kat-app
+spec:
+  tls:
+    termination: edge
+  to:
+    name: ophelia-kat-app
+    kind: Service
+    weight: 100
+  wildcardPolicy: None
