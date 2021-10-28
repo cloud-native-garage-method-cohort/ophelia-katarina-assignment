@@ -17,7 +17,16 @@ spec:
       script: |
         #!/bin/sh
         set -e
-
+        pwd 
+        ls /workspace
+        echo " this is the /workspace/source"
+        ls /workspace/source
+        echo " this is the source repo content"
+        ls ./source
+        echo " this is the ./source/k8s"
+        ls ./source/k8s
+        cat ./source/k8s/manifest.yaml
+        echo " kubectl apply -n $(params.app-namespace) -f ./source/$(params.manifest) --validate=false"
         kubectl apply -n $(params.app-namespace) -f ./source/$(params.manifest) --validate=false
     - name: verify-deploy
       image: quay.io/upslopeio/kubectl:latest
