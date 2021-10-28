@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ophelia-kat-app
+  name: ophelia-kat-express
 spec:
   replicas: 1
   selector:
@@ -19,7 +19,7 @@ spec:
       dnsPolicy: ClusterFirst
       schedulerName: default-scheduler
       containers:
-      - name: ophelia-kat-app
+      - name: ophelia-kat-express
         image: quay.io/ophelia_huang/ophelia-kat-express
         ports:
         - name: http
